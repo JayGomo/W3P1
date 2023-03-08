@@ -9,11 +9,51 @@ namespace sdds
 	{
 		char m_topic[MAX_TOPIC_LENGTH + 1];
 		double m_cost;
+		double projectCost;
 	};
 
 	//class Department does here
+	/*The Department class must keep the following information:
+
+	The departments' name: that is held dynamically in a C string. (char *)
+	The departments' projects: that is held dynamically by a Project pointer. (Project *)
+	Number of Current Projects: that are all held in an integer. (int)
+	Budget of the Department: that is held in a double (double). Should have an initial value of 15345.99.
+	*/
+	class Department
+	{
+	public:
+		char* deparmentName;
+		Project* projectName;
+		int numofProjects;
+		double departmentBudget = 15345.99;
+
+		//functions
+		void updateName(const char* newname);
+		void updateBudget(double change);
+		bool addProject(Project& newproject);
 
 
+		void createDepartment(const char* newname,			//what is difference between * and &
+			Project& newproject,
+			double change);
+
+
+		Project* fetchProjects() const;					//why is the const outside of the input ar
+
+		int fetchNumProjects() const;
+
+		double fetchBudget() const;
+
+		char* fetchName() const;
+
+		double totalexpenses();
+
+		double remainingBudget();
+
+		void clearDepartment();
+
+	};
 
 
 
