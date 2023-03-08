@@ -17,7 +17,7 @@ namespace sdds
     }
 
     //fully provided for students to display details of a department
-    void display(const Department& department)
+    void display(const Department& department) 
     {
         Project* temp = department.fetchProjects();
         int projects = department.fetchNumProjects();
