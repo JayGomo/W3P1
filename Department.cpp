@@ -10,7 +10,7 @@ namespace sdds
 
 
     //fully provided for students to display details of a project
-    void display(const Project& project)
+    void display(const Project& project) //& means pass by reference, does not pass an copy of the object
     {
         cout << "Project " << project.m_topic
             << " will cost a total of " << project.m_cost << " C$." << endl;
@@ -102,6 +102,7 @@ This function will eventually return true if a project was added to the departme
     bool Department::addProject(Project& newProject)
     {
         double totalCost = departmentBudget;
+        //double totalCost = remainingBudget();
         for (int i = 0; i < numofProjects; i++)
         {
             totalCost += projectName[i].projectCost;    //where are we getting new project cost from?
@@ -140,7 +141,9 @@ This function will eventually return true if a project was added to the departme
     void createDepartment(const char* newname, Project& newproject, double change)
     {
         //This function will use functions updateName, addProject and updateBudget to set the name of the department, add a project to it and update its budget.
-
+        updateName(newname);
+        Department::addProject(newproject); //why am I getting these errors?
+        Department::updateBudget(change);   
     };
 
 
@@ -149,10 +152,10 @@ This function will eventually return true if a project was added to the departme
     //This function will return the list of projects a deparment is currently working on
     Project* fetchProjects() const //syntax error not sure what it was supposed to be?
     {
-        //This function will return the list of projects a department is currently working on.
+        return Department::projectName;
     }
 
-    int fetchNumProjects() const; //This function will return the number of projects a department is currently working on.
+    int Department::fetchNumProjects() const; //This function will return the number of projects a department is currently working on.
     {
 
     }

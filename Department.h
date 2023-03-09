@@ -22,9 +22,11 @@ namespace sdds
 	*/
 	class Department
 	{
+
+
 	public:
 		char* deparmentName;
-		Project* projectName;
+		struct Project* projectName;
 		int numofProjects;
 		double departmentBudget = 15345.99;
 
@@ -39,18 +41,12 @@ namespace sdds
 			double change);
 
 
-		Project* fetchProjects() const;					//why is the const outside of the input ar
-
+		Project* fetchProjects() const;					//why is the const outside of the input arg //does not modify the member of the class when called.
 		int fetchNumProjects() const;
-
 		double fetchBudget() const;
-
 		char* fetchName() const;
-
 		double totalexpenses();
-
 		double remainingBudget();
-
 		void clearDepartment();
 
 	};
