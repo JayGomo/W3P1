@@ -22,13 +22,13 @@ namespace sdds
 	*/
 	class Department
 	{
-
-
-	public:
 		char* deparmentName;
 		struct Project* projectName;
 		int numofProjects;
 		double departmentBudget = 15345.99;
+
+	public:
+
 
 		//functions
 		void updateName(const char* newname);
@@ -37,8 +37,8 @@ namespace sdds
 
 
 		void createDepartment(const char* newname,			//what is difference between * and &
-			Project& newproject,
-			double change);
+			Project& newproject,							//* = pass the array of char starting at first
+			double change);									//& pass by reference
 
 
 		Project* fetchProjects() const;					//why is the const outside of the input arg //does not modify the member of the class when called.

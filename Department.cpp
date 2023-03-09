@@ -40,12 +40,19 @@ namespace sdds
     department's current name will not change.
     */
 
-    void updateName(const char* newname)
+    void Department::updateName(const char* newname)
     {
+        //redo
+
+
+
+
+
+        /*
         char* department_name = nullptr;
         //if newname is not null and is greater than 0 and less than 25
         if (newname != nullptr && strlen(newname) > 0 && strlen(newname) <= 25)
-        {   //should else be included as well
+        {   //should else be included as well   //no need
             if (department_name != nullptr)
             {
                 delete[] department_name;       //if department name is not empty, delete old, will this work or do I need to delete via class?
@@ -62,7 +69,7 @@ namespace sdds
             strncpy(department_name, newname, length);
             department_name[length] = '\0';
             //return department_name as new department name?
-        }
+        }*/
     }
     //function to update the budget 
     //This function will update the budget of the department by adding a new change to it.
